@@ -20,7 +20,7 @@ export const settings = {
    * @type {boolean} true | false
    * @description Whether show Hamburger
    */
-  showHamburger: true,
+  showHamburger: false,
   /**
    * @type {boolean} true | false
    * @description Whether show the settings right-panel
@@ -30,7 +30,7 @@ export const settings = {
    * @type {boolean} true | false
    * @description Whether show TagsView
    */
-  showTagsView: true,
+  showTagsView: false,
   /**
    * @description TagsView show number
    */

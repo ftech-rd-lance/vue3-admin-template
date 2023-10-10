@@ -32,19 +32,23 @@ resizeHandler()
 .main-container {
   min-height: 100%;
   transition: margin-left var(--sideBar-switch-duration);
-  margin-left: var(--side-bar-width);
+	margin-top: 60px;
+  // margin-left: var(--side-bar-width);
   position: relative;
 }
 .sidebar-container {
   transition: width var(--sideBar-switch-duration);
-  width: var(--side-bar-width) !important;
+	width: 100%;
+	// width: var(--side-bar-width) !important;
   background-color: var(--el-menu-bg-color);
-  height: 100%;
+  // height: 100%;
+	height: 54px;
   position: fixed;
   font-size: 0;
   top: 0;
-  bottom: 0;
+  // bottom: 0;
   left: 0;
+	right: 0;
   z-index: 1001;
   overflow: hidden;
   border-right: 0.5px solid var(--side-bar-border-right-color);

@@ -40,10 +40,11 @@ const { title, logo } = toRefs(state)
 //vue3.0 过度效果更改  enter-> enter-from   leave-> leave-from
 .sidebar-logo-container {
   position: relative;
-  width: 100%;
+  // width: 100%;
+	width: 240px;
   height: 50px;
   line-height: 50px;
-  background: var(--sidebar-logo-background);
+  // background: var(--sidebar-logo-background);
   padding-left: 14px;
   text-align: left;
   overflow: hidden;

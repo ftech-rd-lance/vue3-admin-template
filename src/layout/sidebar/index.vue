@@ -9,21 +9,46 @@
         :collapse="!sidebar.opened"
         :default-active="activeMenu"
         :collapse-transition="false"
-        mode="vertical"
+        mode="horizontal"
       >
         <sidebar-item v-for="route in allRoutes" :key="route.path" :item="route" :base-path="route.path" />
       </el-menu>
     </el-scrollbar>
+		<!-- 下拉操作菜单 -->
+    <div v-if="settings.ShowDropDown" class="right-menu rowSC">
+      <el-dropdown trigger="click" size="medium">
+        <div class="avatar-wrapper">
+          <img src="https://github.jzfai.top/file/images/nav-right-logo.gif" class="user-avatar" />
+          <CaretBottom style="width: 1em; height: 1em; margin-left: 4px" />
+        </div>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <router-link to="/">
+              <el-dropdown-item>{{ langTitle('Home') }}</el-dropdown-item>
+            </router-link>
+            <el-dropdown-item>修改密碼</el-dropdown-item>
+            <el-dropdown-item divided @click="loginOut">{{ langTitle('login out') }}</el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { nextTick } from 'vue'
 import { computed } from 'vue'
 import { storeToRefs } from 'pinia/dist/pinia'
+import { CaretBottom } from '@element-plus/icons-vue'
 import { useRoute } from 'vue-router'
 import Logo from './Logo.vue'
 import SidebarItem from './SidebarItem.vue'
 import { useBasicStore } from '@/store/basic'
+import { resetState } from '@/hooks/use-permission'
+import { elMessage } from '@/hooks/use-element'
+import { langTitle } from '@/hooks/use-common'
+import { loginOutReq } from "@/api/user";
+
 const { settings, allRoutes, sidebar } = storeToRefs(useBasicStore())
 const routeInstance = useRoute()
 const activeMenu = computed(() => {
@@ -34,13 +59,61 @@ const activeMenu = computed(() => {
   }
   return path
 })
+
+//退出登录
+const router = useRouter()
+const loginOut = () => {
+  loginOutReq().then(()=>{
+    elMessage('退出登录成功')
+    router.push(`/login?redirect=/`)
+    nextTick(() => {
+      resetState()
+    })
+  })
+}
 </script>
 <style lang="scss">
+.reset-menu-style {
+	display: flex;
+	width: 100%;
+}
+.el-scrollbar {
+	width: 80%
+}
+
 //fix open the item style issue
 .el-menu-vertical {
-  width: var(--side-bar-width);
+  // width: var(--side-bar-width);
+	height: 54px;
+	width: 100%;
 }
 .reset-menu-style {
   border-right: 1px solid var(--side-bar-border-right-color);
+}
+
+//logo
+.avatar-wrapper {
+  position: relative;
+  cursor: pointer;
+	display: flex;
+	align-items: flex-end;
+	
+  .user-avatar {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+	svg {
+		color: #ddd;
+	}
+}
+
+//drop-down
+.right-menu {
+  cursor: pointer;
+  margin-right: 10px;
+  // background-color: var(--nav-bar-right-menu-background);
 }
 </style>

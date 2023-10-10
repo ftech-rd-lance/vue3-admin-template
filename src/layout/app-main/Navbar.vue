@@ -14,7 +14,7 @@
     <!--导航标题-->
     <div v-if="settings.showNavbarTitle" class="heardCenterTitle">{{ settings.title }}</div>
     <!-- 下拉操作菜单 -->
-    <div v-if="settings.ShowDropDown" class="right-menu rowSC">
+    <!-- <div v-if="settings.ShowDropDown" class="right-menu rowSC">
       <el-dropdown trigger="click" size="medium">
         <div class="avatar-wrapper">
           <img src="https://github.jzfai.top/file/images/nav-right-logo.gif" class="user-avatar" />
@@ -28,12 +28,12 @@
             <a target="_blank" href="https://github.com/jzfai/vue3-admin-template">
               <el-dropdown-item>{{ langTitle('Github') }}</el-dropdown-item>
             </a>
-            <!--<el-dropdown-item>修改密码</el-dropdown-item>-->
+            <el-dropdown-item>修改密碼</el-dropdown-item>
             <el-dropdown-item divided @click="loginOut">{{ langTitle('login out') }}</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
-    </div>
+    </div> -->
   </div>
 </template>
 
