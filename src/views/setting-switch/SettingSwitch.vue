@@ -21,8 +21,8 @@
           <el-switch v-model="settings.showHamburger" />
         </div>
         <div class="mt-30px">
-          showLeftMenu：
-          <el-switch v-model="settings.showLeftMenu" />
+          showMenu：
+          <el-switch v-model="settings.showMenu" />
         </div>
         <div class="mt-30px">
           showTagsView：

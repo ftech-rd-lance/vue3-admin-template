@@ -53,6 +53,7 @@ const changeLanguage = (langParam) => {
 }
 const count = ref(0)
 const showObj = ref(GLOBAL_VAR)
+const value1 = ref("")
 
 //send req test
 const sendReq = () => {

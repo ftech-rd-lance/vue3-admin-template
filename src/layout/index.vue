@@ -1,9 +1,9 @@
 <template>
   <div :class="classObj" class="layout-wrapper">
     <!--left side-->
-    <Sidebar v-if="settings.showLeftMenu" class="sidebar-container" />
+    <Sidebar v-if="settings.showMenu" :class="`sidebar-container ${settings.menuPosition}`" />
     <!--right container-->
-    <div class="main-container">
+    <div :class="`main-container ${settings.menuPosition}`">
       <Navbar v-if="settings.showTopNavbar" />
       <TagsView v-if="settings.showTagsView" />
       <AppMain />
@@ -22,7 +22,7 @@ const { sidebar, settings } = useBasicStore()
 const classObj = computed(() => {
   return {
     closeSidebar: !sidebar.opened,
-    hideSidebar: !settings.showLeftMenu
+    hideSidebar: !settings.showMenu
   }
 })
 resizeHandler()
@@ -32,26 +32,34 @@ resizeHandler()
 .main-container {
   min-height: 100%;
   transition: margin-left var(--sideBar-switch-duration);
-	margin-top: 60px;
-  // margin-left: var(--side-bar-width);
   position: relative;
+	&.top {
+		margin-top: 60px;
+	}
+	&.left {
+		margin-left: var(--side-bar-width);
+	}
 }
 .sidebar-container {
   transition: width var(--sideBar-switch-duration);
-	width: 100%;
-	// width: var(--side-bar-width) !important;
   background-color: var(--el-menu-bg-color);
-  // height: 100%;
-	height: 54px;
   position: fixed;
   font-size: 0;
-  top: 0;
-  // bottom: 0;
+	top: 0;
   left: 0;
-	right: 0;
   z-index: 1001;
   overflow: hidden;
   border-right: 0.5px solid var(--side-bar-border-right-color);
+	&.top {
+		width: 100%;
+		height: 54px;
+		right: 0;
+	}
+	&.left {
+		width: var(--side-bar-width) !important;
+		height: 100%;
+		bottom: 0;
+	}
 }
 .closeSidebar {
   .sidebar-container {
@@ -67,6 +75,7 @@ resizeHandler()
   }
   .main-container {
     margin-left: 0;
+		margin-top: 0;
   }
 }
 </style>

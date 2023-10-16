@@ -1,175 +1,175 @@
 export default {
-  router: {
-    Dashboard: '首页',
-    LowCodePlatFrom: '低代码平台',
-    RBAC: '用户权限角色',
-    'Setting Switch': '配置文件',
-    'Error Log': '错误日志',
-    'Error Index': '错误日志列表',
-    'Error Generator': '错误日志生成',
+	router: {
+		Dashboard: '首頁',
+		LowCodePlatFrom: '低程式碼平臺',
+		RBAC: '使用者許可權角色',
+		'Setting Switch': '配置檔案',
+		'Error Log': '錯誤日誌',
+		'Error Index': '錯誤日誌列表',
+		'Error Generator': '錯誤日誌生成',
 
-    Nested: '路由嵌套',
-    Menu1: '菜单1',
-    'Menu1-1': '菜单 1-1',
-    'Menu1-2': '菜单 1-2',
-    'Menu1-2-1': '菜单 1-2-1',
-    'Menu1-2-2': '菜单 1-2-2',
-    'Menu1-3': '菜单 1-3',
-    menu2: '菜单 2',
+		Nested: '路由巢狀',
+		Menu1: '選單1',
+		'Menu1-1': '選單 1-1',
+		'Menu1-2': '選單 1-2',
+		'Menu1-2-1': '選單 1-2-1',
+		'Menu1-2-2': '選單 1-2-2',
+		'Menu1-3': '選單 1-3',
+		menu2: '選單 2',
 
-    'External Link': '外链',
+		'External Link': '外鏈',
 
-    'Basic Demo': '基础例子',
-    Hook: 'hook',
-    Pinia: 'pinia',
-    Mock: 'mock',
-    'Svg Icon': 'svg使用',
-    'Parent Children': '父子组件通信',
-    'KeepAlive Group': '缓存组',
-    'Tab KeepAlive': 'tab缓存',
-    'Third KeepAlive': '三级路由缓存',
-    SecondChildren: '三级路由示例1',
-    ThirdChildren: '三级路由示例2',
-    Worker: '多线程',
-    Permission: '权限路由',
-    'Permission Switch': '权限切换',
-    'Role Index': '角色权限',
-    'Code Index': 'Code权限',
-    'Button Permission': '按钮权限',
+		'Basic Demo': '基礎例子',
+		Hook: 'hook',
+		Pinia: 'pinia',
+		Mock: 'mock',
+		'Svg Icon': 'svg使用',
+		'Parent Children': '父子元件通訊',
+		'KeepAlive Group': '快取組',
+		'Tab KeepAlive': 'tab快取',
+		'Third KeepAlive': '三級路由快取',
+		SecondChildren: '三級路由示例1',
+		ThirdChildren: '三級路由示例2',
+		Worker: '多執行緒',
+		Permission: '許可權路由',
+		'Permission Switch': '許可權切換',
+		'Role Index': '角色許可權',
+		'Code Index': 'Code許可權',
+		'Button Permission': '按鈕許可權',
 
-    Charts: '图表',
-    Excel: 'Excel',
-    'Rich Text': '富文本',
-    Table: '表格',
-    Guid: '使用引导',
-    Other: '其他'
-  },
+		Charts: '圖表',
+		Excel: 'Excel',
+		'Rich Text': '富文字',
+		Table: '表格',
+		Guid: '使用引導',
+		Other: '其他'
+	},
 
-  tagsView: {
-    Refresh: '刷新',
-    Close: '关闭当前',
-    'Close Others': '关闭其他',
-    'Close All': '关闭所有'
-  },
-  navbar: {
-    Home: '首页',
-    Github: '项目git地址',
-    Docs: '官方文档',
-    'login out': '退出登录'
-  },
-  //page
-  dashboard: {
-    'switch theme': '切换主题色',
-    'switch size': '切换尺寸',
-    'switch language': '切换语言',
-    en: 'English',
-    zh: '中文',
-    'Button Group': '按钮组',
-    'unocss using': 'unocss使用',
-    'global var': '全局静态变量'
-  },
-  'error-log': {
-    log: '错误日志',
-    pageUrl: '页面路径',
-    startDate: '开始日期',
-    endDate: '结束日期',
-    github: 'Github 地址',
-    search: '查询',
-    reset: '重置',
-    multiDel: '批量删除'
-  }
-  // permission: {
-  //   addRole: '新增角色',
-  //   editPermission: '编辑权限',
-  //   roles: '你的权限',
-  //   switchRoles: '切换权限',
-  //   tips:
-  //     '在某些情况下，不适合使用 v-permission。例如：Element-UI 的 el-tab 或 el-table-column 以及其它动态渲染 dom 的场景。你只能通过手动设置 v-if 来实现。',
-  //   delete: '删除',
-  //   confirm: '确定',
-  //   cancel: '取消'
-  // },
-  // guide: {
-  //   description: '引导页对于一些第一次进入项目的人很有用，你可以简单介绍下项目的功能。本 Demo 是基于',
-  //   button: '打开引导'
-  // },
-  // components: {
-  //   documentation: '文档',
-  //   tinymceTips:
-  //     '富文本是管理后台一个核心的功能，但同时又是一个有很多坑的地方。在选择富文本的过程中我也走了不少的弯路，市面上常见的富文本都基本用过了，最终权衡了一下选择了Tinymce。更详细的富文本比较和介绍见',
-  //   dropzoneTips:
-  //     '由于我司业务有特殊需求，而且要传七牛 所以没用第三方，选择了自己封装。代码非常的简单，具体代码你可以在这里看到 @/components/Dropzone',
-  //   stickyTips: '当页面滚动到预设的位置会吸附在顶部',
-  //   backToTopTips1: '页面滚动到指定位置会在右下角出现返回顶部按钮',
-  //   backToTopTips2:
-  //     '可自定义按钮的样式、show/hide、出现的高度、返回的位置 如需文字提示，可在外部使用Element的el-tooltip元素',
-  //   imageUploadTips:
-  //     '由于我在使用时它只有vue@1版本，而且和mockjs不兼容，所以自己改造了一下，如果大家要使用的话，优先还是使用官方版本。'
-  // },
-  // table: {
-  //   dynamicTips1: '固定表头, 按照表头顺序排序',
-  //   dynamicTips2: '不固定表头, 按照点击顺序排序',
-  //   dragTips1: '默认顺序',
-  //   dragTips2: '拖拽后顺序',
-  //   title: '标题',
-  //   importance: '重要性',
-  //   type: '类型',
-  //   remark: '点评',
-  //   search: '搜索',
-  //   add: '添加',
-  //   export: '导出',
-  //   reviewer: '审核人',
-  //   id: '序号',
-  //   date: '时间',
-  //   author: '作者',
-  //   readings: '阅读数',
-  //   status: '状态',
-  //   actions: '操作',
-  //   edit: '编辑',
-  //   publish: '发布',
-  //   draft: '草稿',
-  //   delete: '删除',
-  //   cancel: '取 消',
-  //   confirm: '确 定'
-  // },
-  // example: {
-  //   warning:
-  //     '创建和编辑页面是不能被 keep-alive 缓存的，因为keep-alive 的 include 目前不支持根据路由来缓存，所以目前都是基于 component name 来进行缓存的。如果你想类似的实现缓存效果，可以使用 localStorage 等浏览器缓存方案。或者不要使用 keep-alive 的 include，直接缓存所有页面。详情见'
-  // },
-  // errorLog: {
-  //   tips: '请点击右上角bug小图标',
-  //   description:
-  //     '现在的管理后台基本都是spa的形式了，它增强了用户体验，但同时也会增加页面出问题的可能性，可能一个小小的疏忽就导致整个页面的死锁。好在 Vue 官网提供了一个方法来捕获处理异常，你可以在其中进行错误处理或者异常上报。',
-  //   documentation: '文档介绍'
-  // },
-  // excel: {
-  //   export: '导出',
-  //   selectedExport: '导出已选择项',
-  //   placeholder: '请输入文件名(默认excel-list)'
-  // },
-  // zip: {
-  //   export: '导出',
-  //   placeholder: '请输入文件名(默认file)'
-  // },
-  // pdf: {
-  //   tips: '这里使用   window.print() 来实现下载pdf的功能'
-  // },
-  // theme: {
-  //   change: '换肤',
-  //   documentation: '换肤文档',
-  //   tips: 'Tips: 它区别于 navbar 上的 theme-pick, 是两种不同的换肤方法，各自有不同的应用场景，具体请参考文档。'
-  // },
-  // tagsView: {
-  //   refresh: '刷新',
-  //   close: '关闭',
-  //   closeOthers: '关闭其它',
-  //   closeAll: '关闭所有'
-  // },
-  // settings: {
-  //   title: '系统布局配置',
-  //   theme: '主题色',
-  //   tagsView: '开启 Tags-View',
-  //   fixedHeader: '固定 Header',
-  //   sidebarLogo: '侧边栏 Logo'
-  // }
+	tagsView: {
+		Refresh: '重新整理',
+		Close: '關閉當前',
+		'Close Others': '關閉其他',
+		'Close All': '關閉所有'
+	},
+	navbar: {
+		Home: '首頁',
+		Github: '專案git地址',
+		Docs: '官方文件',
+		'login out': '退出登入'
+	},
+	//page
+	dashboard: {
+		'switch theme': '切換主題色',
+		'switch size': '切換尺寸',
+		'switch language': '切換語言',
+		en: 'English',
+		zh: '中文',
+		'Button Group': '按鈕組',
+		'unocss using': 'unocss使用',
+		'global var': '全域性靜態變數'
+	},
+	'error-log': {
+		log: '錯誤日誌',
+		pageUrl: '頁面路徑',
+		startDate: '開始日期',
+		endDate: '結束日期',
+		github: 'Github 地址',
+		search: '查詢',
+		reset: '重置',
+		multiDel: '批次刪除'
+	}
+	// permission: {
+	//   addRole: '新增角色',
+	//   editPermission: '編輯許可權',
+	//   roles: '你的許可權',
+	//   switchRoles: '切換許可權',
+	//   tips:
+	//     '在某些情況下，不適合使用 v-permission。例如：Element-UI 的 el-tab 或 el-table-column 以及其它動態渲染 dom 的場景。你只能透過手動設定 v-if 來實現。',
+	//   delete: '刪除',
+	//   confirm: '確定',
+	//   cancel: '取消'
+	// },
+	// guide: {
+	//   description: '引導頁對於一些第一次進入專案的人很有用，你可以簡單介紹下專案的功能。本 Demo 是基於',
+	//   button: '開啟引導'
+	// },
+	// components: {
+	//   documentation: '文件',
+	//   tinymceTips:
+	//     '富文字是管理後臺一個核心的功能，但同時又是一個有很多坑的地方。在選擇富文字的過程中我也走了不少的彎路，市面上常見的富文字都基本用過了，最終權衡了一下選擇了Tinymce。更詳細的富文字比較和介紹見',
+	//   dropzoneTips:
+	//     '由於我司業務有特殊需求，而且要傳七牛 所以沒用第三方，選擇了自己封裝。程式碼非常的簡單，具體程式碼你可以在這裡看到 @/components/Dropzone',
+	//   stickyTips: '當頁面滾動到預設的位置會吸附在頂部',
+	//   backToTopTips1: '頁面滾動到指定位置會在右下角出現返回頂部按鈕',
+	//   backToTopTips2:
+	//     '可自定義按鈕的樣式、show/hide、出現的高度、返回的位置 如需文字提示，可在外部使用Element的el-tooltip元素',
+	//   imageUploadTips:
+	//     '由於我在使用時它只有vue@1版本，而且和mockjs不相容，所以自己改造了一下，如果大家要使用的話，優先還是使用官方版本。'
+	// },
+	// table: {
+	//   dynamicTips1: '固定表頭, 按照表頭順序排序',
+	//   dynamicTips2: '不固定表頭, 按照點選順序排序',
+	//   dragTips1: '預設順序',
+	//   dragTips2: '拖拽後順序',
+	//   title: '標題',
+	//   importance: '重要性',
+	//   type: '型別',
+	//   remark: '點評',
+	//   search: '搜尋',
+	//   add: '新增',
+	//   export: '匯出',
+	//   reviewer: '稽核人',
+	//   id: '序號',
+	//   date: '時間',
+	//   author: '作者',
+	//   readings: '閱讀數',
+	//   status: '狀態',
+	//   actions: '操作',
+	//   edit: '編輯',
+	//   publish: '釋出',
+	//   draft: '草稿',
+	//   delete: '刪除',
+	//   cancel: '取 消',
+	//   confirm: '確 定'
+	// },
+	// example: {
+	//   warning:
+	//     '建立和編輯頁面是不能被 keep-alive 快取的，因為keep-alive 的 include 目前不支援根據路由來快取，所以目前都是基於 component name 來進行快取的。如果你想類似的實現快取效果，可以使用 localStorage 等瀏覽器快取方案。或者不要使用 keep-alive 的 include，直接快取所有頁面。詳情見'
+	// },
+	// errorLog: {
+	//   tips: '請點選右上角bug小圖示',
+	//   description:
+	//     '現在的管理後臺基本都是spa的形式了，它增強了使用者體驗，但同時也會增加頁面出問題的可能性，可能一個小小的疏忽就導致整個頁面的死鎖。好在 Vue 官網提供了一個方法來捕獲處理異常，你可以在其中進行錯誤處理或者異常上報。',
+	//   documentation: '文件介紹'
+	// },
+	// excel: {
+	//   export: '匯出',
+	//   selectedExport: '匯出已選擇項',
+	//   placeholder: '請輸入檔名(預設excel-list)'
+	// },
+	// zip: {
+	//   export: '匯出',
+	//   placeholder: '請輸入檔名(預設file)'
+	// },
+	// pdf: {
+	//   tips: '這裡使用   window.print() 來實現下載pdf的功能'
+	// },
+	// theme: {
+	//   change: '換膚',
+	//   documentation: '換膚文件',
+	//   tips: 'Tips: 它區別於 navbar 上的 theme-pick, 是兩種不同的換膚方法，各自有不同的應用場景，具體請參考文件。'
+	// },
+	// tagsView: {
+	//   refresh: '重新整理',
+	//   close: '關閉',
+	//   closeOthers: '關閉其它',
+	//   closeAll: '關閉所有'
+	// },
+	// settings: {
+	//   title: '系統佈局配置',
+	//   theme: '主題色',
+	//   tagsView: '開啟 Tags-View',
+	//   fixedHeader: '固定 Header',
+	//   sidebarLogo: '側邊欄 Logo'
+	// }
 }

@@ -20,12 +20,17 @@ export const settings = {
    * @type {boolean} true | false
    * @description Whether show Hamburger
    */
-  showHamburger: false,
+  showHamburger: true,
   /**
    * @type {boolean} true | false
-   * @description Whether show the settings right-panel
+   * @description Whether show the settings panel
    */
-  showLeftMenu: true,
+  showMenu: true,
+	/**
+	 * @type {string} 'top' | 'right'
+	 * @description Panel Position
+	 */
+	menuPosition: 'top',
   /**
    * @type {boolean} true | false
    * @description Whether show TagsView

@@ -3,7 +3,7 @@
     <div class="rowSC">
       <!--  切换sidebar按钮  -->
       <hamburger
-        v-if="settings.showHamburger"
+        v-if="settings.menuPosition == 'left' && settings.showHamburger"
         :is-active="sidebar.opened"
         class="hamburger-container"
         @toggleClick="toggleSideBar"
@@ -13,8 +13,9 @@
     </div>
     <!--导航标题-->
     <div v-if="settings.showNavbarTitle" class="heardCenterTitle">{{ settings.title }}</div>
-    <!-- 下拉操作菜单 -->
-    <!-- <div v-if="settings.ShowDropDown" class="right-menu rowSC">
+    
+		<!-- 下拉操作菜单 -->
+    <div v-if="settings.menuPosition == 'left' && settings.ShowDropDown" class="right-menu rowSC">
       <el-dropdown trigger="click" size="medium">
         <div class="avatar-wrapper">
           <img src="https://github.jzfai.top/file/images/nav-right-logo.gif" class="user-avatar" />
@@ -33,7 +34,7 @@
           </el-dropdown-menu>
         </template>
       </el-dropdown>
-    </div> -->
+    </div>
   </div>
 </template>
 

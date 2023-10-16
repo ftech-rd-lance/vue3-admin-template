@@ -1,21 +1,22 @@
 <template>
-  <div id="Sidebar" class="reset-menu-style">
+  <div id="Sidebar" :class="`reset-menu-style ${settings.menuPosition}`">
     <!--logo-->
     <Logo v-if="settings.sidebarLogo" :collapse="!sidebar.opened" />
     <!--router menu-->
     <el-scrollbar>
       <el-menu
-        class="el-menu-vertical"
+        :class="`el-menu-${settings.menuPosition == 'top' ? 'horizontal' : 'vertical'}`"
         :collapse="!sidebar.opened"
         :default-active="activeMenu"
         :collapse-transition="false"
-        mode="horizontal"
+        :mode="settings.menuPosition == 'top' ? 'horizontal' : 'vertical'"
       >
         <sidebar-item v-for="route in allRoutes" :key="route.path" :item="route" :base-path="route.path" />
       </el-menu>
     </el-scrollbar>
+
 		<!-- 下拉操作菜单 -->
-    <div v-if="settings.ShowDropDown" class="right-menu rowSC">
+    <div v-if="settings.menuPosition == 'top' && settings.ShowDropDown" class="right-menu rowSC">
       <el-dropdown trigger="click" size="medium">
         <div class="avatar-wrapper">
           <img src="https://github.jzfai.top/file/images/nav-right-logo.gif" class="user-avatar" />
@@ -64,7 +65,7 @@ const activeMenu = computed(() => {
 const router = useRouter()
 const loginOut = () => {
   loginOutReq().then(()=>{
-    elMessage('退出登录成功')
+    elMessage('登出成功')
     router.push(`/login?redirect=/`)
     nextTick(() => {
       resetState()
@@ -73,22 +74,25 @@ const loginOut = () => {
 }
 </script>
 <style lang="scss">
-.reset-menu-style {
-	display: flex;
-	width: 100%;
-}
-.el-scrollbar {
-	width: 80%
-}
-
 //fix open the item style issue
 .el-menu-vertical {
-  // width: var(--side-bar-width);
+  width: var(--side-bar-width);
+}
+.el-menu-horizontal {
 	height: 54px;
 	width: 100%;
 }
+
 .reset-menu-style {
   border-right: 1px solid var(--side-bar-border-right-color);
+
+	&.top {
+		display: flex;
+		width: 100%;
+		.el-scrollbar {
+			width: 80%
+		}
+	}
 }
 
 //logo

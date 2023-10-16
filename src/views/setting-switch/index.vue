@@ -18,11 +18,15 @@
         </div>
         <div class="mt-30px">
           showHamburger：
-          <el-switch v-model="settings.showHamburger" />
+          <el-switch v-model="settings.showHamburger" :disabled="settings.menuPosition == 'top'" />
         </div>
         <div class="mt-30px">
-          showLeftMenu：
-          <el-switch v-model="settings.showLeftMenu" />
+          showMenu：
+          <el-switch v-model="settings.showMenu" />
+        </div>
+				<div class="mt-30px">
+          menuPosition：
+          <el-switch v-model="settings.menuPosition" active-text="left" inactive-text="top" active-value="left" inactive-value="top" :disabled="!settings.showMenu" />
         </div>
         <div class="mt-30px">
           showTagsView：

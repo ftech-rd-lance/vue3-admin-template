@@ -4,7 +4,7 @@ const settings = {
     showNavbarTitle: false,
     ShowDropDown: true,
     showHamburger: true,
-    showLeftMenu: true,
+    showMenu: true,
     showTagsView: true,
     tagsViewNum: 6,
     showTopNavbar: true,

@@ -41,7 +41,7 @@ export type RouterTypes = Array<rawProp>
 export interface SettingsConfig {
   title: string
   sidebarLogo: boolean
-  showLeftMenu: boolean
+  showMenu: boolean
   ShowDropDown: boolean
   showHamburger: boolean
   isNeedLogin: boolean
