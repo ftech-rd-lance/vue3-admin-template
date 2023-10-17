@@ -80,7 +80,6 @@ const loginOut = () => {
 }
 .el-menu-horizontal {
 	height: 54px;
-	width: 100%;
 }
 
 .reset-menu-style {
@@ -89,8 +88,16 @@ const loginOut = () => {
 	&.top {
 		display: flex;
 		width: 100%;
+		height: 54px;
 		.el-scrollbar {
-			width: 80%
+			flex: 8;
+			.el-scrollbar__view {
+				height: 100%;
+				padding-bottom: 50px;
+				.el-menu {
+					display: flex;
+				}
+			}
 		}
 	}
 }
