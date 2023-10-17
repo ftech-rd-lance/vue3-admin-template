@@ -1,14 +1,16 @@
 <template>
-  <div :class="[ `sidebar-logo-container ${settings.menuPosition}`, { 'collapse': collapse }]">
+  <div :class="[`sidebar-logo-container ${settings.menuPosition}`, { collapse: collapse }]">
     <transition name="sidebar-logo-fade">
       <!--  折叠显示   -->
       <router-link v-if="collapse" class="sidebar-logo-link" to="/">
-        <svg-icon v-if="logo" :icon-class="logo" class="sidebar-logo" />
+        <!-- <svg-icon v-if="logo" :icon-class="logo" class="sidebar-logo" /> -->
+        <img v-if="logo" :src="logo" class="sidebar-logo" />
         <h1 v-else class="sidebar-title">{{ title }}</h1>
       </router-link>
       <!--  正常显示   -->
       <router-link v-else class="sidebar-logo-link" to="/">
-        <svg-icon v-if="logo" :icon-class="logo" class="sidebar-logo" />
+        <!-- <svg-icon v-if="logo" :icon-class="logo" class="sidebar-logo" /> -->
+        <img v-if="logo" :src="logo" class="sidebar-logo" />
         <h1 class="sidebar-title">{{ title }}</h1>
       </router-link>
     </transition>
@@ -30,7 +32,7 @@ defineProps({
 const state = reactive({
   title: settings.title,
   //src/icons/common/sidebar-logo.svg
-  logo: 'sidebar-logo'
+  logo: 'logo.png'
 })
 //export to page for use
 const { title, logo } = toRefs(state)
@@ -45,30 +47,34 @@ const { title, logo } = toRefs(state)
   padding-left: 14px;
   text-align: left;
   overflow: hidden;
-	&.top {
-		width: 240px;
-	}
-	&.left {
-		width: 100%;
-		background: var(--sidebar-logo-background);
-	}
+  &.top {
+    width: 240px;
+  }
+  &.left {
+    width: 100%;
+    background: var(--sidebar-logo-background);
+  }
   & .sidebar-logo-link {
+    display: flex;
+    align-items: center;
     height: 100%;
     width: 100%;
     & .sidebar-logo {
-      fill: currentColor;
-      color: var(--sidebar-logo-color);
-      width: var(--sidebar-logo-width);
-      height: var(--sidebar-logo-height);
+      // fill: currentColor;
+      // color: var(--sidebar-logo-color);
+      // width: var(--sidebar-logo-width);
+      // height: var(--sidebar-logo-height);
       vertical-align: middle;
-      margin-right: 12px;
+      // margin-right: 12px;
+      width: 80px;
     }
     & .sidebar-title {
-      display: inline-block;
+      // display: inline-block;
       margin: 0;
+      padding: 5px 10px;
       color: var(--sidebar-logo-title-color);
       font-weight: 600;
-      line-height: 50px;
+      line-height: 20px;
       font-size: 14px;
       font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
       vertical-align: middle;

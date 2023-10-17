@@ -1,6 +1,6 @@
 import packageJson from '../package.json'
 export const settings = {
-  title: packageJson.name,
+	title: '新北市建築工程剩餘土石方管理資訊系統',
   /**
    * @type {boolean} true | false
    * @description Whether show the logo in sidebar

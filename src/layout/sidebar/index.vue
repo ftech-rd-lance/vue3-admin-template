@@ -77,9 +77,11 @@ const loginOut = () => {
 //fix open the item style issue
 .el-menu-vertical {
   width: var(--side-bar-width);
+	background-color: #1E5C5D !important;
 }
 .el-menu-horizontal {
 	height: 54px;
+	background-color: #1E5C5D !important;
 }
 
 .reset-menu-style {

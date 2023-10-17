@@ -43,7 +43,8 @@ resizeHandler()
 }
 .sidebar-container {
   transition: width var(--sideBar-switch-duration);
-  background-color: var(--el-menu-bg-color);
+  // background-color: var(--el-menu-bg-color);
+	background-color: #1E5C5D;
   position: fixed;
   font-size: 0;
 	top: 0;
