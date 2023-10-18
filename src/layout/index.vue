@@ -25,7 +25,7 @@ const classObj = computed(() => {
     hideSidebar: !settings.showMenu
   }
 })
-resizeHandler()
+if(settings.menuPosition == 'left') resizeHandler()
 </script>
 
 <style lang="scss" scoped>
@@ -43,8 +43,7 @@ resizeHandler()
 }
 .sidebar-container {
   transition: width var(--sideBar-switch-duration);
-  // background-color: var(--el-menu-bg-color);
-	background-color: #1E5C5D;
+  background-color: var(--el-menu-bg-color);
   position: fixed;
   font-size: 0;
 	top: 0;

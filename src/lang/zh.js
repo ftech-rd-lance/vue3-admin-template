@@ -55,7 +55,7 @@ export default {
 		Home: '首頁',
 		Github: '專案git地址',
 		Docs: '官方文件',
-		'login out': '退出登入'
+		'login out': '登出'
 	},
 	//page
 	dashboard: {
