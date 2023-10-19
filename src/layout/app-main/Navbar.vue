@@ -15,56 +15,22 @@
     <div v-if="settings.showNavbarTitle" class="heardCenterTitle">{{ settings.title }}</div>
     
 		<!-- 下拉操作菜单 -->
-    <div v-if="settings.menuPosition == 'left' && settings.ShowDropDown" class="right-menu rowSC">
-      <el-dropdown trigger="click" size="medium">
-        <div class="avatar-wrapper">
-          <img src="https://github.jzfai.top/file/images/nav-right-logo.gif" class="user-avatar" />
-          <CaretBottom style="width: 1em; height: 1em; margin-left: 4px" />
-        </div>
-        <template #dropdown>
-          <el-dropdown-menu>
-            <router-link to="/">
-              <el-dropdown-item>{{ langTitle('Home') }}</el-dropdown-item>
-            </router-link>
-            <a target="_blank" href="https://github.com/jzfai/vue3-admin-template">
-              <el-dropdown-item>{{ langTitle('Github') }}</el-dropdown-item>
-            </a>
-            <el-dropdown-item>修改密碼</el-dropdown-item>
-            <el-dropdown-item divided @click="loginOut">{{ langTitle('login out') }}</el-dropdown-item>
-          </el-dropdown-menu>
-        </template>
-      </el-dropdown>
-    </div>
+    <RightMenu v-if="settings.menuPosition == 'left' && settings.ShowDropDown" />
   </div>
 </template>
 
 <script setup >
-import { nextTick } from 'vue'
-import { CaretBottom } from '@element-plus/icons-vue'
-import { useRouter } from 'vue-router'
 import Breadcrumb from './Breadcrumb.vue'
 import Hamburger from './Hamburger.vue'
+import RightMenu from './component/RightMenu.vue'
 import { resetState } from '@/hooks/use-permission'
 import { elMessage } from '@/hooks/use-element'
 import { useBasicStore } from '@/store/basic'
-import { langTitle } from '@/hooks/use-common'
-import {loginOutReq} from "@/api/user";
 
 const basicStore = useBasicStore()
 const { settings, sidebar, setToggleSideBar } = basicStore
 const toggleSideBar = () => {
   setToggleSideBar()
-}
-//退出登录
-const router = useRouter()
-const loginOut = () => {
-  loginOutReq().then(()=>{
-    elMessage('退出登录成功')
-    router.push(`/login?redirect=/`)
-    nextTick(() => {
-      resetState()
-    })
-  })
 }
 </script>
 
@@ -109,12 +75,5 @@ const loginOut = () => {
   font-weight: 600;
   font-size: 20px;
   transform: translate(-50%, -50%);
-}
-
-//drop-down
-.right-menu {
-  cursor: pointer;
-  margin-right: 40px;
-  background-color: var(--nav-bar-right-menu-background);
 }
 </style>
