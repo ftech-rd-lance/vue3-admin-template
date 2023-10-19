@@ -1,20 +1,23 @@
-import axiosReq from 'axios'
-// export const userInfoReq = (): Promise<any> => {
-//   return new Promise((resolve) => {
-//     const reqConfig = {
-//       url: '/basis-func/user/getUserInfo',
-//       params: { plateFormId: 2 },
-//       method: 'post'
-//     }
-//     axiosReq(reqConfig).then(({ data }) => {
-//       resolve(data)
-//     })
-//   })
-// }
+import request from '@/utils/axios-req'
+import settings from '@/settings'
+
+//获取用户信息
+export const userInfoReq = () => {
+	return new Promise((resolve) => {
+		const reqConfig = {
+			url: '/mock/getInfo',
+			data: { platformId: settings.platformId },
+			method: 'get'
+		}
+		request(reqConfig).then((res) => {
+			resolve(res?.data)
+		}).catch(err => console.log(err))
+	})
+}
 
 //登录
 export const loginReq = (subForm) => {
-  return axiosReq({
+	return request({
     url: '/mock/login',
     params: subForm,
     method: 'post'
@@ -23,7 +26,7 @@ export const loginReq = (subForm) => {
 
 //退出登录
 export const loginOutReq = () => {
-  return axiosReq({
+	return request({
     url: '/mock/loginOut',
     method: 'post'
   })

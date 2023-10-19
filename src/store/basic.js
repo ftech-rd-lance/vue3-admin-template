@@ -53,14 +53,14 @@ export const useBasicStore = defineStore('basic', {
         state.allRoutes = constantRoutes.concat(routes)
       })
     },
-    setUserInfo({ userInfo, roles, codes }) {
-      const { username, avatar } = userInfo
+    setUserInfo({ user, roles, codes }) {
+      // const { username, avatar } = user
       this.$patch((state) => {
         state.roles = roles
         state.codes = codes
         state.getUserInfo = true
-        state.userInfo.username = username
-        state.userInfo.avatar = avatar
+        // state.userInfo.username = username
+        // state.userInfo.avatar = avatar
       })
     },
     resetState() {
