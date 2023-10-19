@@ -115,50 +115,12 @@ export const constantRoutes = [
 			}
 		]
 	},
-	basicDemo,
-	{ path: "/:pathMatch(.*)", redirect: "/404", hidden: true }
+	// basicDemo
 ]
 
 //角色和code数组动态路由
 export const roleCodeRoutes = [
-	{
-		path: '/roles-codes',
-		component: Layout,
-		redirect: '/roles-codes/page',
-		alwaysShow: true, // will always show the root menu
-		name: 'Permission',
-		meta: {
-			title: 'Permission',
-			icon: 'lock',
-			roles: ['admin', 'editor'] // you can set roles in root nav
-		},
-		children: [
-			{
-				path: 'index',
-				component: () => import('@/views/roles-codes/index.vue'),
-				name: 'RolesCodes',
-				meta: { title: 'Permission Switch' }
-			},
-			{
-				path: 'roleIndex',
-				component: () => import('@/views/roles-codes/role-index.vue'),
-				name: 'RoleIndex',
-				meta: { title: 'Role Index', roles: ['admin'] }
-			},
-			{
-				path: 'code-index',
-				component: () => import('@/views/roles-codes/code-index.vue'),
-				name: 'CodeIndex',
-				meta: { title: 'Code Index', roles: ['admin'] }
-			},
-			{
-				path: 'button-permission',
-				component: () => import('@/views/roles-codes/button-permission.vue'),
-				name: 'ButtonPermission',
-				meta: { title: 'Button Permission' }
-			}
-		]
-	}
+	basicDemo
 ]
 
 /**

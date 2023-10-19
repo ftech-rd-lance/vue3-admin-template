@@ -2,20 +2,24 @@ import Layout from '@/layout/index.vue'
 const BasicDemo = {
   path: '/basic-demo',
   component: Layout,
-  meta: { title: 'Basic Demo', icon: 'eye-open' },
+  meta: { 
+		title: 'Basic Demo', 
+		icon: 'eye-open',
+		roles: ['admin', 'editor']
+	},
   alwaysShow: true,
   children: [
     {
       path: 'hook',
       component: () => import('@/views/basic-demo/hook/index.vue'),
       name: 'Hook',
-      meta: { title: 'Hook' }
+			meta: { title: 'Hook', roles: ['admin'] }
     },
     {
       path: 'pinia',
       component: () => import('@/views/basic-demo/pinia/index.vue'),
       name: 'Pinia',
-      meta: { title: 'Pinia' }
+			meta: { title: 'Pinia', roles: ['admin'] }
     },
     {
       path: 'mock',
