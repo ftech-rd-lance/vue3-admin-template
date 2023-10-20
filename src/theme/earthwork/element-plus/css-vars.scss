@@ -5,7 +5,7 @@
 @use '../../mixins/mixins'  as *;
 
 html.earthwork-theme {
-  color-scheme: china-red;
+  color-scheme: earthwork-theme;
   @each $type in (primary, success, warning, danger, error, info) {
     @include set-css-color-rgb($colors, $type);
   }
@@ -13,5 +13,4 @@ html.earthwork-theme {
   @each $type in (primary, success, warning, danger, error, info) {
     @include set-css-color-type($colors, $type);
   }
-  //--el-color-primary: #c72210;
 }

@@ -1,7 +1,7 @@
 const loginIn = {
 	url: '/mock/login',
 	method: 'post',
-	response: () => {
+	response: ({ query }) => {
 		return {
 			statusCode: 20000,
 			message: "successful",
@@ -33,7 +33,7 @@ const getInfo = {
 			statusCode: 20000,
 			message: "successful",
 			data: {
-				roles: [ "editor" ]
+				roles: [ "admin" ]
 			}
 		}
 	}

@@ -2,7 +2,9 @@
 	<div class="login-container columnCC">
 		<el-form ref="refLoginForm" class="login-form" :model="subForm" :rules="formRules">
 			<div class="title-container">
-				<h3 class="title text-center">{{ settings.title }}</h3>
+				<!-- <h3 class="title text-center">{{ settings.title }}</h3> -->
+				<h3 class="text-center">新北市政府工務局</h3>
+				<h3 class="title text-center">土資場報送資訊系統</h3>
 			</div>
 			<el-form-item prop="keyword" :rules="formRules.isNotNull('usename不能為空')">
 				<div class="rowSC">
@@ -39,6 +41,11 @@
 				Login
 			</el-button>
 		</el-form>
+		<div class="copyright-text">
+			新北市政府工務局 版權所有
+			<br>
+			Copyright © Public Works Department, New Taipei City Government. All rights reserved.
+		</div>
 	</div>
 </template>
 
@@ -138,16 +145,24 @@ $light_gray: #eee;
 .login-container {
 	height: 100vh;
 	width: 100%;
-	background-color: #2d3a4b;
+	background: no-repeat center -10% #ADE9D6 url(../../../public/assets/background/login_bg.png);
 	.login-form {
-		margin-bottom: 20vh;
 		width: 360px;
+		border: 2px solid white;
+		border-radius: 10px;
+		padding: 30px 15px;
+		background-color: rgba(white, 0.4);
+		margin-left: 0;
+		@media screen and (min-width: 768px) {
+			margin-left: 40%;
+			margin-bottom: 5%;
+		}
 	}
 	.title-container {
 		.title {
-			font-size: 22px;
-			color: #eee;
-			margin: 0px auto 25px auto;
+			font-size: 24px;
+			color: #2B7C80;
+			margin: 4px auto 25px auto;
 			text-align: center;
 			font-weight: bold;
 		}
@@ -156,7 +171,7 @@ $light_gray: #eee;
 
 .svg-container {
 	padding-left: 6px;
-	color: $dark_gray;
+	color: white;
 	text-align: center;
 	width: 30px;
 }
@@ -177,8 +192,13 @@ $light_gray: #eee;
 .show-pwd {
 	width: 50px;
 	font-size: 16px;
-	color: $dark_gray;
+	color: white;
 	cursor: pointer;
+	text-align: center;
+}
+.copyright-text {
+	position: absolute;
+	bottom: 5%;
 	text-align: center;
 }
 </style>

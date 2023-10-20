@@ -16,10 +16,10 @@ export const userInfoReq = () => {
 }
 
 //登录
-export const loginReq = (subForm) => {
+export const loginReq = (params) => {
 	return request({
     url: '/mock/login',
-    params: subForm,
+    params,
     method: 'post'
   })
 }

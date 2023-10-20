@@ -1,6 +1,6 @@
 <template>
 	<div class="right-menu rowSC">
-		<el-dropdown trigger="click" size="medium">
+		<el-dropdown trigger="click" size="medium" popper-class="right-menu-content">
 			<div class="avatar-wrapper">
 				<img src="https://github.jzfai.top/file/images/nav-right-logo.gif" class="user-avatar" />
 				<CaretBottom style="width: 1em; height: 1em; margin-left: 4px" />
@@ -41,8 +41,8 @@ const loginOut = () => {
 </script>
 
 <style lang="sass" scoped>
-	.right-menu 
-		cursor: pointer
-		margin-right: 40px
-		// background-color: var(--nav-bar-right-menu-background)
+.right-menu 
+	cursor: pointer
+	margin-right: 40px
+	// background-color: var(--nav-bar-right-menu-background)
 </style>

@@ -4,9 +4,12 @@
 @import './reset-elemenet-plus-style.scss';
 //动画文件
 @import './transition.scss';
+// 字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
 
 //reset style
 body {
+	font-family: 'Noto Sans TC', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
   height: 100%;
   margin: 0;
   padding: 0;
