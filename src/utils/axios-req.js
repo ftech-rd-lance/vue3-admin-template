@@ -47,7 +47,7 @@ service.interceptors.request.use(
 				lock: true,
 				fullscreen: true,
 				// spinner: 'CircleCheck',
-				text: '数据载入中...',
+				text: '資料載入中...',
 				background: 'rgba(0, 0, 0, 0.1)'
 			})
 		}
@@ -102,8 +102,47 @@ service.interceptors.response.use(
 		if (loadingInstance) {
 			loadingInstance && loadingInstance.close()
 		}
+
+		if (error && error.response) {
+			switch (error.response.status) {
+				case 400:
+					error.message = '請求錯誤'
+					break
+				case 401:
+					error.message = '驗證失敗'
+					break
+				case 403:
+					error.message = '拒絕訪問'
+					break
+				case 404:
+					error.message = `請求位址錯誤: ${error.response.config.url}`
+					break
+				case 406:
+					error.message = '無法接受請求'
+					break
+				case 408:
+					error.message = '請求超時'
+					break
+				case 500:
+					error.message = '伺服器錯誤'
+					break
+				case 502:
+					error.message = '網路錯誤'
+					break
+				case 503:
+					error.message = '服務不可用'
+					break
+				case 504:
+					error.message = '網路超時'
+					break
+				default: error.message = `連接錯誤`
+			}
+		} else {
+			error.message = `連接錯誤`
+		}
+
 		ElMessage.error({
-			message: err,
+			message: error.message,
 			duration: 2 * 1000
 		})
 		return Promise.reject(err)

@@ -6,12 +6,12 @@
 				<h3 class="text-center">新北市政府工務局</h3>
 				<h3 class="title text-center">土資場報送資訊系統</h3>
 			</div>
-			<el-form-item prop="keyword" :rules="formRules.isNotNull('usename不能為空')">
+			<el-form-item prop="username" :rules="formRules.isNotNull('usename不能為空')">
 				<div class="rowSC">
 					<span class="svg-container">
 						<svg-icon icon-class="user" />
 					</span>
-					<el-input v-model="subForm.keyword" placeholder="用户名(admin)" />
+					<el-input v-model="subForm.username" placeholder="用户名(admin)" />
 					<!--占位-->
 					<div class="show-pwd" />
 				</div>
@@ -62,7 +62,7 @@ const { settings } = useBasicStore()
 const formRules = useElement().formRules
 //form
 const subForm = reactive({
-	keyword: 'panda',
+	username: 'panda',
 	password: '123456'
 })
 const state = reactive({
@@ -151,7 +151,7 @@ $light_gray: #eee;
 		border: 2px solid white;
 		border-radius: 10px;
 		padding: 30px 15px;
-		background-color: rgba(white, 0.4);
+		background-color: rgba(white, 0.7);
 		margin-left: 0;
 		@media screen and (min-width: 768px) {
 			margin-left: 40%;

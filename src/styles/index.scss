@@ -51,6 +51,18 @@ output {
   line-height: 1;
 }
 
+//main-container全局样式
+.filter-container {
+  padding-bottom: 10px;
+
+  .filter-item {
+    display: inline-block;
+    vertical-align: baseline;
+    // margin-bottom: 10px;
+		margin: 5px;
+  }
+}
+
 //scroll
 @mixin main-show-wh() {
   /* css 声明 */
